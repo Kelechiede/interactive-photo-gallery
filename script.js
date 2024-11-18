@@ -16,6 +16,18 @@ document.querySelectorAll('.photo img').forEach(image => {
         // Append the modal to the body
         document.body.appendChild(modal);
 
+        // Ensure full details are displayed
+        const modalImage = modal.querySelector('img');
+        modalImage.onload = () => {
+            if (modalImage.naturalWidth > modalImage.naturalHeight) {
+                modalImage.style.width = '100%';
+                modalImage.style.height = 'auto';
+            } else {
+                modalImage.style.width = 'auto';
+                modalImage.style.height = '100%';
+            }
+        };
+
         // Close the modal on clicking the close button
         modal.querySelector('.close').addEventListener('click', () => {
             document.body.removeChild(modal);
@@ -29,3 +41,4 @@ document.querySelectorAll('.photo img').forEach(image => {
         });
     });
 });
+
