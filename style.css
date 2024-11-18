@@ -49,7 +49,7 @@ footer {
     width: 100%;
 }
 
-/* Modal styling */
+/* Modal container styling */
 .modal {
     position: fixed;
     top: 0;
@@ -61,23 +61,28 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow: hidden; /* Prevent scrollbars */
 }
 
+/* Modal content container */
 .modal-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%; /* Ensures image fits within the screen width */
+    max-height: 95%; /* Ensures image fits within the screen height */
     background-color: white;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
 }
 
+/* Modal image */
 .modal-content img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Scale image to fit the modal's width */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
+/* Close button */
 .close {
     position: absolute;
     top: 10px;
@@ -86,6 +91,7 @@ footer {
     color: black;
     font-weight: bold;
     cursor: pointer;
+    z-index: 1001; /* Ensure it appears above the image */
 }
 
 .close:hover {
